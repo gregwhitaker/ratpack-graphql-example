@@ -3,8 +3,14 @@ package ratpack.graphql.example.service.product.model;
 public class Image {
 
     enum ImageType {
-        PRIMARY,
-        THUMBNAIL
+        PRIMARY("primary"),
+        THUMBNAIL("thumbnail");
+
+        private final String value;
+
+        ImageType(final String value) {
+            this.value = value;
+        }
     }
 
     private Long id;
