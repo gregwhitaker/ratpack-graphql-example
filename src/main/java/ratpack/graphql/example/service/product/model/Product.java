@@ -8,6 +8,7 @@ public class Product {
     private String name;
     private String longName;
     private boolean active = true;
+    private Gender gender;
     private Prices prices;
     private List<Image> images;
     private List<Sku> skus;
@@ -42,6 +43,14 @@ public class Product {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public Prices getPrices() {
