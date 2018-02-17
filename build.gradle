@@ -1,0 +1,29 @@
+plugins {
+    id 'com.gradle.build-scan' version '1.11'
+    id 'io.ratpack.ratpack-java' version '1.5.0'
+}
+
+buildScan {
+    licenseAgreementUrl = 'https://gradle.com/terms-of-service'
+    licenseAgree = 'yes'
+    publishAlways()
+}
+
+group = 'com.github.gregwhitaker'
+version = '0.1.0'
+mainClassName = 'ratpack.graphql.example.Main'
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    compile ratpack.dependency('guice')
+    compile 'com.github.gregwhitaker:ratpack-error:1.5.0'
+
+    runtime 'org.slf4j:slf4j-simple:1.7.22'
+
+    testCompile 'junit:junit:4.12'
+}
