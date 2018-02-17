@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * In-memory datastore with dummy product data for example purposes.
+ */
 @Singleton
 public class DefaultProductDao implements ProductDao {
     private final Map<Long, Product> products = new HashMap<>();

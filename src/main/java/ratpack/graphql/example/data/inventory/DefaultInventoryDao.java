@@ -5,6 +5,9 @@ import com.google.inject.Singleton;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * In-memory datastore with dummy inventory data for example purposes.
+ */
 @Singleton
 public class DefaultInventoryDao implements InventoryDao {
     private final Map<String, Integer> skus = new HashMap<>();
