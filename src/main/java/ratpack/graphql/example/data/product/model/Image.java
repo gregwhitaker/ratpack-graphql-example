@@ -1,4 +1,4 @@
-package ratpack.graphql.example.service.product.model;
+package ratpack.graphql.example.data.product.model;
 
 public class Image {
 

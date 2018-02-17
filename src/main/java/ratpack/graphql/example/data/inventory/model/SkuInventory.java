@@ -1,4 +1,4 @@
-package ratpack.graphql.example.service.inventory.model;
+package ratpack.graphql.example.data.inventory.model;
 
 public class SkuInventory {
 

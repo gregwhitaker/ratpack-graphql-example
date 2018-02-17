@@ -1,11 +1,11 @@
 package ratpack.graphql.example.data.product;
 
 import com.google.inject.Singleton;
-import ratpack.graphql.example.service.product.model.Gender;
-import ratpack.graphql.example.service.product.model.Image;
-import ratpack.graphql.example.service.product.model.Prices;
-import ratpack.graphql.example.service.product.model.Product;
-import ratpack.graphql.example.service.product.model.Sku;
+import ratpack.graphql.example.data.product.model.Gender;
+import ratpack.graphql.example.data.product.model.Image;
+import ratpack.graphql.example.data.product.model.Prices;
+import ratpack.graphql.example.data.product.model.Product;
+import ratpack.graphql.example.data.product.model.Sku;
 
 import java.util.ArrayList;
 import java.util.HashMap;

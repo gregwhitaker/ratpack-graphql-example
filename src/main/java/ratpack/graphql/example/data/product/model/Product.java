@@ -1,4 +1,4 @@
-package ratpack.graphql.example.service.product.model;
+package ratpack.graphql.example.data.product.model;
 
 import java.util.List;
 import java.util.function.Supplier;
