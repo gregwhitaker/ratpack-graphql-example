@@ -20,7 +20,11 @@ public class DefaultProductDao implements ProductDao {
         init();
     }
 
+    /**
+     * Initializes the in-memory data store with dummy data for the example.
+     */
     private void init() {
+        // Product1
         Product product1 = new Product();
         product1.setId(1L);
         product1.setName("Widget1");
@@ -96,6 +100,7 @@ public class DefaultProductDao implements ProductDao {
             return skus;
         });
 
+        // Product2
         Product product2 = new Product();
         product2.setId(1L);
         product2.setName("Widget2");
@@ -150,7 +155,76 @@ public class DefaultProductDao implements ProductDao {
             return skus;
         });
 
+        // Product3
+        Product product3 = new Product();
+        product3.setId(1L);
+        product3.setName("Widget3");
+        product3.setLongName("Widget3 - Long Name");
+        product3.setActive(false);
+        product3.setGender(Gender.MEN);
+        product3.setPrices(() -> {
+            Prices prices = new Prices();
+            prices.setCurrency("USD");
+            prices.setMsrp(11000);
+            prices.setList(10000);
+            prices.setSale(10000);
+            prices.setFormattedMsrp("$110.00");
+            prices.setFormattedList("$100.00");
+            prices.setFormattedSale("$100.00");
+
+            return prices;
+        });
+        product3.setImages(() -> {
+            List<Image> images = new ArrayList<>();
+
+            Image image1 = new Image();
+            image1.setId(31L);
+            image1.setAlt("Widget3 - Thumbnail");
+            image1.setType(Image.ImageType.THUMBNAIL);
+            image1.setUrl("http://via.placeholder.com/100x100");
+            image1.setSortOrder(1);
+
+            Image image2 = new Image();
+            image2.setId(32L);
+            image2.setAlt("Widget3 - Primary");
+            image2.setType(Image.ImageType.PRIMARY);
+            image2.setUrl("http://via.placeholder.com/350x500");
+            image2.setSortOrder(2);
+
+            images.add(image1);
+            images.add(image2);
+
+            return images;
+        });
+        product3.setSkus(() -> {
+            List<Sku> skus = new ArrayList<>();
+
+            Sku sku1 = new Sku();
+            sku1.setSkuId("789-1");
+            sku1.setSize("S");
+
+            Sku sku2 = new Sku();
+            sku2.setSkuId("789-2");
+            sku2.setSize("M");
+
+            Sku sku3 = new Sku();
+            sku3.setSkuId("789-3");
+            sku3.setSize("L");
+
+            Sku sku4 = new Sku();
+            sku4.setSkuId("789-4");
+            sku4.setSize("XL");
+
+            skus.add(sku1);
+            skus.add(sku2);
+            skus.add(sku3);
+            skus.add(sku4);
+
+            return skus;
+        });
+
         products.put(1L, product1);
         products.put(2L, product2);
+        products.put(3L, product3);
     }
 }
