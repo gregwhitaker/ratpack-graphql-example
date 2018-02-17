@@ -1,6 +1,7 @@
 package ratpack.graphql.example.service.product.model;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 public class Product {
 
@@ -61,6 +62,10 @@ public class Product {
         this.prices = prices;
     }
 
+    public void setPrices(Supplier<Prices> prices) {
+        this.prices = prices.get();
+    }
+
     public List<Image> getImages() {
         return images;
     }
@@ -69,11 +74,19 @@ public class Product {
         this.images = images;
     }
 
+    public void setImages(Supplier<List<Image>> images) {
+        this.images = images.get();
+    }
+
     public List<Sku> getSkus() {
         return skus;
     }
 
     public void setSkus(List<Sku> skus) {
         this.skus = skus;
+    }
+
+    public void setSkus(Supplier<List<Sku>> skus) {
+        this.skus = skus.get();
     }
 }
