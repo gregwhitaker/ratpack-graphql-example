@@ -5,6 +5,9 @@ import graphql.schema.DataFetchingEnvironment;
 import ratpack.graphql.example.data.link.LinkRepository;
 import ratpack.graphql.example.data.link.model.Link;
 
+/**
+ * Mutator that adds a new link to the repository.
+ */
 public class CreateLinkMutator implements DataFetcher<Link> {
 
     private final LinkRepository linkRepo;
