@@ -8,6 +8,7 @@ import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
 import graphql.schema.idl.SchemaParser;
 import graphql.schema.idl.TypeDefinitionRegistry;
+import ratpack.exec.Blocking;
 import ratpack.handling.Context;
 import ratpack.handling.Handler;
 import ratpack.jackson.Jackson;
@@ -60,16 +61,19 @@ public class GraphQLHandler implements Handler {
                     .variables(variables)
                     .build();
 
-            final ExecutionResult executionResult = graphql.execute(executionInput);
+            // The graphql java implementation is blocking :(
+            Blocking.get(() -> graphql.execute(executionInput))
+                    .then(executionResult -> {
+                        Map<String, Object> result = new LinkedHashMap<>();
+                        if (executionResult.getErrors().isEmpty()) {
+                            result.put(DATA, executionResult.getData());
+                        } else {
+                            result.put(ERRORS, executionResult.getErrors());
+                        }
 
-            Map<String, Object> result = new LinkedHashMap<>();
-            if (executionResult.getErrors().isEmpty()) {
-                result.put(DATA, executionResult.getData());
-            } else {
-                result.put(ERRORS, executionResult.getErrors());
-            }
-
-            ctx.render(Jackson.json(result));
+                        ctx.render(Jackson.json(result));
+                    }
+            );
         });
     }
 }

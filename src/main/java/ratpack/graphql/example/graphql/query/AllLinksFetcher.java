@@ -21,7 +21,6 @@ public class AllLinksFetcher implements DataFetcher<List<Link>> {
     @Override
     public List<Link> get(DataFetchingEnvironment environment) {
         try {
-            // The graphql java implementation is blocking :(
             return linkRepo.findAll();
         } catch (Exception e) {
             throw new RuntimeException(e);
