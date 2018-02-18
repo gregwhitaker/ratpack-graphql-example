@@ -1,4 +1,6 @@
 # ratpack-graphql-example
+[![Build Status](https://travis-ci.org/gregwhitaker/ratpack-graphql-example.svg?branch=master)](https://travis-ci.org/gregwhitaker/ratpack-graphql-example)
+
 An example of a [GraphQL](http://graphql.org/) service implemented in [Ratpack](https://www.ratpack.io).
 
 ## Running the Example
