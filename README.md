@@ -4,9 +4,11 @@
 An example of a [GraphQL](http://graphql.org/) service implemented in [Ratpack](https://www.ratpack.io).
 
 ## Running the Example
-You can run the example by using the following Gradle command:
+You can start the example by running the following Gradle command:
 
     $ ./gradlew run 
+
+Once the application has started, use [GraphQL Playground](https://github.com/graphcool/graphql-playground) to explore the API.
 
 ## Bugs and Feedback
 For bugs, questions, and discussions please use the [Github Issues](https://github.com/gregwhitaker/ratpack-graphql-example/issues).
