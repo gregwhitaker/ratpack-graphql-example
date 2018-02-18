@@ -8,7 +8,7 @@ You can start the example by running the following Gradle command:
 
     $ ./gradlew run 
 
-Once the application has started, use [GraphQL Playground](https://github.com/graphcool/graphql-playground) to explore the API.
+Once the application has started, use [GraphQL Playground](https://github.com/graphcool/graphql-playground) to explore the API at [http://localhost:5050/graphql](http://localhost:5050/graphql).
 
 ## Bugs and Feedback
 For bugs, questions, and discussions please use the [Github Issues](https://github.com/gregwhitaker/ratpack-graphql-example/issues).
