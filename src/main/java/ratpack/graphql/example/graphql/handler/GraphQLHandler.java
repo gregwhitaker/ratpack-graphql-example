@@ -68,6 +68,7 @@ public class GraphQLHandler implements Handler {
                             result.put(DATA, executionResult.getData());
                         } else {
                             result.put(ERRORS, executionResult.getErrors());
+                            result.put(DATA, executionResult.getData());
                         }
 
                         ctx.render(Jackson.json(result));
