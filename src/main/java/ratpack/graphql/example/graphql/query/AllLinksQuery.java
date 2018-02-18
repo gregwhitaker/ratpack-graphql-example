@@ -10,11 +10,11 @@ import java.util.List;
 /**
  * DataFetcher that returns all links in the repository.
  */
-public class AllLinksFetcher implements DataFetcher<List<Link>> {
+public class AllLinksQuery implements DataFetcher<List<Link>> {
 
     private final LinkRepository linkRepo;
 
-    public AllLinksFetcher(LinkRepository linkRepo) {
+    public AllLinksQuery(LinkRepository linkRepo) {
         this.linkRepo = linkRepo;
     }
 

@@ -6,7 +6,8 @@ import com.google.inject.Provides;
 import graphql.schema.idl.RuntimeWiring;
 import ratpack.graphql.example.data.link.LinkRepository;
 import ratpack.graphql.example.graphql.handler.GraphQLHandler;
-import ratpack.graphql.example.graphql.query.AllLinksFetcher;
+import ratpack.graphql.example.graphql.mutator.CreateLinkMutator;
+import ratpack.graphql.example.graphql.query.AllLinksQuery;
 
 public class GraphQLModule extends AbstractModule {
 
@@ -20,7 +21,10 @@ public class GraphQLModule extends AbstractModule {
     public RuntimeWiring runtimeWiring(LinkRepository linkRepo) {
         return RuntimeWiring.newRuntimeWiring()
                 .type("QueryType", wiring -> wiring
-                        .dataFetcher("allLinks", new AllLinksFetcher(linkRepo))
+                        .dataFetcher("allLinks", new AllLinksQuery(linkRepo))
+                )
+                .type("MutationType", wiring -> wiring
+                        .dataFetcher("linkCreate", new CreateLinkMutator(linkRepo))
                 )
                 .build();
     }

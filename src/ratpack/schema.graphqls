@@ -1,9 +1,14 @@
 schema {
     query: QueryType
+    mutation: MutationType
 }
 
 type QueryType {
   allLinks: [Link]
+}
+
+type MutationType {
+  linkCreate( url: String! description: String!): Link
 }
 
 type Link {
