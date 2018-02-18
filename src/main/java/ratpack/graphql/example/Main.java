@@ -1,9 +1,8 @@
 package ratpack.graphql.example;
 
-import ratpack.graphql.example.api.ApiModule;
-import ratpack.graphql.example.api.GraphQLHandler;
+import ratpack.graphql.example.graphql.GraphQLModule;
+import ratpack.graphql.example.graphql.handler.GraphQLHandler;
 import ratpack.graphql.example.data.DataModule;
-import ratpack.graphql.example.service.ServiceModule;
 import ratpack.guice.Guice;
 import ratpack.server.BaseDir;
 import ratpack.server.RatpackServer;
@@ -21,8 +20,7 @@ public class Main {
                         .build()
                 )
                 .registry(Guice.registry(b -> b
-                        .module(ApiModule.class)
-                        .module(ServiceModule.class)
+                        .module(GraphQLModule.class)
                         .module(DataModule.class))
                 )
                 .handlers(chain -> chain
