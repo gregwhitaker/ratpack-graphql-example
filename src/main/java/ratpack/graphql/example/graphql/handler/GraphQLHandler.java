@@ -18,6 +18,9 @@ import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * Handler responsible for resolving GraphQL queries.
+ */
 public class GraphQLHandler implements Handler {
     private static final String GRAPHQL_SCHEMA = "schema.graphqls";
     private static final String DATA = "data";

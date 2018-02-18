@@ -2,13 +2,14 @@ package ratpack.graphql.example.graphql.query;
 
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
-import ratpack.exec.Blocking;
-import ratpack.exec.Promise;
 import ratpack.graphql.example.data.link.LinkRepository;
 import ratpack.graphql.example.data.link.model.Link;
 
 import java.util.List;
 
+/**
+ * DataFetcher that returns all links in the repository.
+ */
 public class AllLinksFetcher implements DataFetcher<List<Link>> {
 
     private final LinkRepository linkRepo;

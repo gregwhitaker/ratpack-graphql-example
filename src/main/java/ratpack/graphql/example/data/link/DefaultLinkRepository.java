@@ -2,13 +2,13 @@ package ratpack.graphql.example.data.link;
 
 import com.google.common.collect.Lists;
 import com.google.inject.Singleton;
-import ratpack.exec.Blocking;
-import ratpack.exec.Operation;
-import ratpack.exec.Promise;
 import ratpack.graphql.example.data.link.model.Link;
 
 import java.util.List;
 
+/**
+ * Dummy in-memory repository for managing links.
+ */
 @Singleton
 public class DefaultLinkRepository implements LinkRepository {
     private final List<Link> links = Lists.newArrayList();
