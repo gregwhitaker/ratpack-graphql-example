@@ -1,8 +1,8 @@
 package ratpack.graphql.example;
 
+import ratpack.graphql.example.data.DataModule;
 import ratpack.graphql.example.graphql.GraphQLModule;
 import ratpack.graphql.example.graphql.handler.GraphQLHandler;
-import ratpack.graphql.example.data.DataModule;
 import ratpack.guice.Guice;
 import ratpack.server.BaseDir;
 import ratpack.server.RatpackServer;

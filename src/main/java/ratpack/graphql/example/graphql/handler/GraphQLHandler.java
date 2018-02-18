@@ -2,7 +2,6 @@ package ratpack.graphql.example.graphql.handler;
 
 import com.google.inject.Inject;
 import graphql.ExecutionInput;
-import graphql.ExecutionResult;
 import graphql.GraphQL;
 import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
